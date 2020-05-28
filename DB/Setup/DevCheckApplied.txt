@@ -1,0 +1,32 @@
+
+Bus 001 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 8087:8008 Intel Corp. 
+Bus 002 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 8087:8000 Intel Corp. 
+Bus 003 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 0461:4e22 Primax Electronics, Ltd 
+Bus 003 258a:0001  
+Bus 003 0bda:0182 Realtek Semiconductor Corp. 
+Bus 004 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 004 046d:085e Logitech, Inc. 
+Bus 004 17e9:c300 DisplayLink 
+Bus 005 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 2109:2820 VIA Labs, Inc. 
+Bus 005 2109:2820 VIA Labs, Inc. 
+Bus 005 050d:0233 Belkin Components 
+Bus 005 2109:2820 VIA Labs, Inc. 
+Bus 005 050d:0233 Belkin Components 
+Bus 005 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+Bus 005 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+Bus 005 2109:2820 VIA Labs, Inc. 
+Bus 005 05a4:9871 Ortek Technology, Inc. 
+Bus 005 045e:00cb Microsoft Corp. Basic Optical Mouse v2.0
+Bus 005 0951:1601 Kingston Technology DataTraveler II+ Pen Drive
+Bus 005 05a4:9870 Ortek Technology, Inc. 
+Bus 005 046d:0809 Logitech, Inc. Webcam Pro 9000
+Bus 005 2109:2820 VIA Labs, Inc. 
+Bus 005 050d:0233 Belkin Components 
+Bus 006 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 006 174c:55aa ASMedia Technology Inc. ASM1051E SATA 6Gb/s bridge, ASM1053E SATA 6Gb/s bridge, ASM1153 SATA 3Gb/s bridge
+Bus 006 2109:0820 VIA Labs, Inc. 
+Bus 006 2109:0820 VIA Labs, Inc. 

@@ -1,0 +1,31 @@
+0424:2514<=><=>fs<=>Hub<=>Unused<=>Full speed (or root) hub
+0424:2514<=><=>fs<=>Hub<=>Unused<=>Full speed (or root) hub
+045e:00cb<=><=>ls<=>Human Interface Device<=>Boot Interface Subclass<=>Mouse
+0461:4e22<=><=>ls<=>Human Interface Device<=>Boot Interface Subclass<=>Mouse
+046d:0809<=><=>fs<=>Video<=>Video Control<=>
+046d:085e<=><=>ss<=>Video<=>Video Control<=>
+050d:0233<=><=>hs<=>Hub<=>Unused<=>Single TT
+050d:0233<=><=>hs<=>Hub<=>Unused<=>Single TT
+050d:0233<=><=>hs<=>Hub<=>Unused<=>Single TT
+05a4:9870<=><=>fs<=>Human Interface Device<=>Boot Interface Subclass<=>Keyboard
+05a4:9871<=><=>fs<=>Hub<=>Unused<=>Full speed (or root) hub
+0951:1601<=><=>fs<=>Mass Storage<=>SCSI<=>Bulk-Only
+0bda:0182<=><=>hs<=>Mass Storage<=>SCSI<=>Bulk-Only
+174c:55aa<=><=>ss<=>Mass Storage<=>SCSI<=>Bulk-Only
+17e9:c300<=><=>ss<=>Vendor Specific Class<=><=>
+1d6b:0002<=><=>hs<=>Hub<=>Unused<=>Full speed (or root) hub
+1d6b:0002<=><=>hs<=>Hub<=>Unused<=>Full speed (or root) hub
+1d6b:0002<=><=>hs<=>Hub<=>Unused<=>Full speed (or root) hub
+1d6b:0002<=><=>hs<=>Hub<=>Unused<=>Full speed (or root) hub
+1d6b:0003<=><=>ss<=>Hub<=>Unused<=>Full speed (or root) hub
+1d6b:0003<=><=>ssp<=>Hub<=>Unused<=>Full speed (or root) hub
+2109:0820<=><=><=>Hub<=>Unused<=>Full speed (or root) hub
+2109:0820<=><=>ss<=>Hub<=>Unused<=>Full speed (or root) hub
+2109:2820<=><=>hs<=>Hub<=>Unused<=>Single TT
+2109:2820<=><=>hs<=>Hub<=>Unused<=>Single TT
+2109:2820<=><=>hs<=>Hub<=>Unused<=>Single TT
+2109:2820<=><=>hs<=>Hub<=>Unused<=>Single TT
+2109:2820<=><=>hs<=>Hub<=>Unused<=>Single TT
+258a:0001<=><=>ls<=>Human Interface Device<=>Boot Interface Subclass<=>Keyboard
+8087:8000<=><=>hs<=>Hub<=>Unused<=>Full speed (or root) hub
+8087:8008<=><=>hs<=>Hub<=>Unused<=>Full speed (or root) hub
