@@ -25,9 +25,9 @@ sudo apt-get install dkms
 Then download the ubuntu driver, extract, and run the .run script to get the DisplayLink driver work.  
 The Displaylink driver path is [here](http://www.displaylink.com/downloads/ubuntu).
 
-## interop Utilities BaseDir
+## Interop Utilities BaseDir
 
-Add the following command in your .bashrc
+Add the following command in your .bashrc or set it before running scripts
 ```
 export IUBASEDIR=<path to Interop_Utilities folder>
 ```
@@ -162,3 +162,7 @@ Navigate through Setup.py script in the same way as shown above.
 ├── Setup.py                                 # Setup script
 └── Start.py                                 # Start script
 ```
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE.md) file for details
