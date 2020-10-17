@@ -26,14 +26,14 @@ print('===============================\n'
 time.sleep(0.5)
 
 try:
-	os.system('pkill pv')
+    os.system('pkill pv')
 except:
-	print('PKILL')
+    print('PKILL')
 
 time.sleep(1)
 
 with open(iuBaseDir + '/DB/TerminalID/DeviceCheck.txt', 'r') as file: # kill device check
-		os.system('xdotool windowclose ' + file.read().rstrip())
+        os.system('xdotool windowclose ' + file.read().rstrip())
 os.system('clear')
 
 print('===============================\n'

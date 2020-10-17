@@ -11,10 +11,10 @@ print('\33]0;Video\a', end='', flush=True)  # Title of terminal
 iuBaseDir = os.environ['IUBASEDIR']
 
 def RStrip(string):
-	if string.rstrip() == '':
-		return 'notSet'
-	else:
-		return string.rstrip()
+    if string.rstrip() == '':
+        return 'notSet'
+    else:
+        return string.rstrip()
 
 #=== Set title of terminal
 print('\33]0;Video\a', end='', flush=True)
@@ -28,6 +28,6 @@ os.system('xdotool windowminimize ' + terminalID)
 #===
 
 with open(iuBaseDir + '/DB/Media/VideoFileName.txt') as file:
-	fileName = RStrip(file.read())
+    fileName = RStrip(file.read())
 
 os.system('mplayer -loop 0 ' + iuBaseDir + '/DB/Media/' + fileName)

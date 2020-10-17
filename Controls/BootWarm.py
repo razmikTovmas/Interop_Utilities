@@ -28,11 +28,10 @@ time.sleep(1)
 os.system('gnome-terminal -e "python3 ' + iuBaseDir + '/Controls/Stop.py"')
 
 while True:
-	with open(iuBaseDir + '/DB/Setup/Stopped.txt', 'r') as file:
-		if 'YES' in file.read():
-			break
+    with open(iuBaseDir + '/DB/Setup/Stopped.txt', 'r') as file:
+        if 'YES' in file.read():
+            break
 
 time.sleep(2)
 
 os.system('reboot')
-

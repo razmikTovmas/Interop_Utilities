@@ -9,22 +9,22 @@ import time
 iuBaseDir = os.environ['IUBASEDIR']
 
 def RStrip(string):
-	if string.rstrip() == '':
-		return 'notSet'
-	else:
-		return string.rstrip()
+    if string.rstrip() == '':
+        return 'notSet'
+    else:
+        return string.rstrip()
 
 statusFileName = iuBaseDir + '/DB/Transfers/' + sys.argv[4]
 
 # Write status
 with open(statusFileName, 'w') as file:
-	file.write('RUNNING')
+    file.write('RUNNING')
 
 loopTransfer = ''
 stop = ''
 
 with open(iuBaseDir + '/DB/Setup/LoopTransfersEn.txt', 'r') as fLoopTransferEn:
-	loopTransfer =  RStrip(fLoopTransferEn.read())
+    loopTransfer =  RStrip(fLoopTransferEn.read())
 
 fileName = sys.argv[3]
 devFrom = sys.argv[1]
@@ -49,75 +49,75 @@ idFile.close()
 # End saving ID of terminal ========================
 
 # Start setting file to transfer ===================
-print('\033[1;40;33mSetting up file to transfer.\tPC => ' + devFrom) 
+print('\033[1;40;33mSetting up file to transfer.\tPC => ' + devFrom)
 try:
-	os.system('pv -pa ' + iuBaseDir + '/DB/Files/' + fileName + ' > ' + fileFrom)
+    os.system('pv -pa ' + iuBaseDir + '/DB/Files/' + fileName + ' > ' + fileFrom)
 except:
-	print('Error with setting up') # for logHelper
-	#=== Log Helper ===#
-	os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + 'X X setup X')
-	#==
-	exit()
+    print('Error with setting up') # for logHelper
+    #=== Log Helper ===#
+    os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + 'X X setup X')
+    #==
+    exit()
 os.system('clear')
 # End setting file to transfer======================
 
 print('\033[1;40;32m')
 
-# Start file transfer 
+# Start file transfer
 i = 0
 iP = 0
 iF = 0
 
 while True:
-	os.system('clear')
-	print(fileFrom, ' => ', fileTo)
-	print('Iteration: %d  Pass: %d  Fail: %d' %(i, iP, iF))
+    os.system('clear')
+    print(fileFrom, ' => ', fileTo)
+    print('Iteration: %d  Pass: %d  Fail: %d' %(i, iP, iF))
 
-	try:
-		os.system('pv -pa ' + fileFrom + ' > ' + fileTo)
-	except:
-		print('Error with file transfer') # for logHelper
-		#=== Log Helper ===#
-		os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' transfer X')
-		#==
-		exit()
+    try:
+        os.system('pv -pa ' + fileFrom + ' > ' + fileTo)
+    except:
+        print('Error with file transfer') # for logHelper
+        #=== Log Helper ===#
+        os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' transfer X')
+        #==
+        exit()
 
-	time.sleep(1)
+    time.sleep(1)
 
-	try:
-		res1 = subprocess.run(['md5sum', fileFrom], stdout=subprocess.PIPE).stdout.decode('utf-8').split()[0]
-		res2 = subprocess.run(['md5sum', fileTo], stdout=subprocess.PIPE).stdout.decode('utf-8').split()[0]
-	except:
-		print('Error with data integrity') # for logHelper
-		#=== Log Helper ===#
-		os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' dataint 0')
-		#==
-		exit()
-				
-	if res1 == res2:
-		print('Data Integrity Pass')
-		#=== Log Helper ===#
-		os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer pass ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' X X')
-		#==
-		iP += 1
-	else:
-		print('\033[1;37;41mData integrity Fail')
-		#=== Log Helper ===#
-		os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' dataint 1')
-		#==
-		iF += 1
-	
-	with open(iuBaseDir + '/DB/Setup/stop.txt', 'r') as file:
-		stop = RStrip(file.read())
+    try:
+        res1 = subprocess.run(['md5sum', fileFrom], stdout=subprocess.PIPE).stdout.decode('utf-8').split()[0]
+        res2 = subprocess.run(['md5sum', fileTo], stdout=subprocess.PIPE).stdout.decode('utf-8').split()[0]
+    except:
+        print('Error with data integrity') # for logHelper
+        #=== Log Helper ===#
+        os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' dataint 0')
+        #==
+        exit()
 
-	if stop == 'YES' or stop == 'notSet':
-		break
-	if loopTransfer == 'NO':
-		break
+    if res1 == res2:
+        print('Data Integrity Pass')
+        #=== Log Helper ===#
+        os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer pass ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' X X')
+        #==
+        iP += 1
+    else:
+        print('\033[1;37;41mData integrity Fail')
+        #=== Log Helper ===#
+        os.system('python3 ' + iuBaseDir + '/DB/Scripts/log.py ' + 'transfer fail ' + devFrom + ' ' + devTo + ' ' + fileName + ' ' + str(i) + ' ' + str(iF) + ' dataint 1')
+        #==
+        iF += 1
 
-	time.sleep(1)
+    with open(iuBaseDir + '/DB/Setup/stop.txt', 'r') as file:
+        stop = RStrip(file.read())
 
-	i += 1
+    if stop == 'YES' or stop == 'notSet':
+        break
+    if loopTransfer == 'NO':
+        break
+
+    time.sleep(1)
+
+    i += 1
 # End file transfer
 
 # Print results
@@ -129,7 +129,7 @@ print('Data Integrity Fail:', iF)
 
 # Write status
 with open(statusFileName, 'w') as sFile:
-	sFile.write('DONE')
+    sFile.write('DONE')
 
 # Wait for some action
 input('Press [Enter] to continue:')

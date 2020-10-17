@@ -19,6 +19,6 @@ os.system('clear')
 print('\033[1;40;33mBuilding .zip file. fileName: ' + fileSizeName + 'MB.zip')
 print('...')
 
-#		MB		 1MB = xb
-#dd bs=1024 count=1048576 </dev/urandom >myfile 
+#        MB         1MB = xb
+#dd bs=1024 count=1048576 </dev/urandom >myfile
 os.system('dd bs=' + fileSizeName + ' count=1048576 </dev/urandom >DB/Files/' + fileSizeName + 'MB.zip')
